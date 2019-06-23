@@ -1,0 +1,10 @@
+Data loaded: size=10000, dim=784
+1N10000
+1n_f784
+1RankNum2500
+3N10000
+3n_f784
+3RankNum2500
+2N10000
+2n_f784
+2RankNum2500

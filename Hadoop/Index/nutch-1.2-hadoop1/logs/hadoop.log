@@ -1,0 +1,42 @@
+2015-05-21 09:08:02,747 INFO  indexer.Indexer - Indexer: starting at 2015-05-21 09:08:02
+2015-05-21 09:08:02,845 FATAL conf.Configuration - error parsing conf mapred-site.xml
+org.xml.sax.SAXParseException; systemId: file:/home/ljw/Index/Index/nutch-1.2-hadoop1/conf/mapred-site.xml; lineNumber: 10; columnNumber: 3; The element type "configuration" must be terminated by the matching end-tag "</configuration>".
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:254)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:300)
+	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:150)
+	at org.apache.hadoop.conf.Configuration.parse(Configuration.java:1989)
+	at org.apache.hadoop.conf.Configuration.parse(Configuration.java:1977)
+	at org.apache.hadoop.conf.Configuration.loadResource(Configuration.java:2048)
+	at org.apache.hadoop.conf.Configuration.loadResources(Configuration.java:2001)
+	at org.apache.hadoop.conf.Configuration.getProps(Configuration.java:1918)
+	at org.apache.hadoop.conf.Configuration.get(Configuration.java:721)
+	at org.apache.hadoop.mapred.JobConf.checkAndWarnDeprecation(JobConf.java:2020)
+	at org.apache.hadoop.mapred.JobConf.<init>(JobConf.java:446)
+	at org.apache.hadoop.mapred.JobConf.<init>(JobConf.java:456)
+	at org.apache.nutch.util.NutchJob.<init>(NutchJob.java:27)
+	at org.apache.nutch.indexer.Indexer.index(Indexer.java:63)
+	at org.apache.nutch.indexer.Indexer.run(Indexer.java:97)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:70)
+	at org.apache.nutch.indexer.Indexer.main(Indexer.java:106)
+2015-05-21 09:08:02,862 FATAL indexer.Indexer - Indexer: java.lang.RuntimeException: org.xml.sax.SAXParseException; systemId: file:/home/ljw/Index/Index/nutch-1.2-hadoop1/conf/mapred-site.xml; lineNumber: 10; columnNumber: 3; The element type "configuration" must be terminated by the matching end-tag "</configuration>".
+	at org.apache.hadoop.conf.Configuration.loadResource(Configuration.java:2152)
+	at org.apache.hadoop.conf.Configuration.loadResources(Configuration.java:2001)
+	at org.apache.hadoop.conf.Configuration.getProps(Configuration.java:1918)
+	at org.apache.hadoop.conf.Configuration.get(Configuration.java:721)
+	at org.apache.hadoop.mapred.JobConf.checkAndWarnDeprecation(JobConf.java:2020)
+	at org.apache.hadoop.mapred.JobConf.<init>(JobConf.java:446)
+	at org.apache.hadoop.mapred.JobConf.<init>(JobConf.java:456)
+	at org.apache.nutch.util.NutchJob.<init>(NutchJob.java:27)
+	at org.apache.nutch.indexer.Indexer.index(Indexer.java:63)
+	at org.apache.nutch.indexer.Indexer.run(Indexer.java:97)
+	at org.apache.hadoop.util.ToolRunner.run(ToolRunner.java:70)
+	at org.apache.nutch.indexer.Indexer.main(Indexer.java:106)
+Caused by: org.xml.sax.SAXParseException; systemId: file:/home/ljw/Index/Index/nutch-1.2-hadoop1/conf/mapred-site.xml; lineNumber: 10; columnNumber: 3; The element type "configuration" must be terminated by the matching end-tag "</configuration>".
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:254)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:300)
+	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:150)
+	at org.apache.hadoop.conf.Configuration.parse(Configuration.java:1989)
+	at org.apache.hadoop.conf.Configuration.parse(Configuration.java:1977)
+	at org.apache.hadoop.conf.Configuration.loadResource(Configuration.java:2048)
+	... 11 more
+

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+function show_usage {
+	echo "Usage: $0 source_dir path_file"
+	exit 1
+}
+
+if [ $# -ne 2 ]; then
+	show_usage
+else
+	if [ -d $1 ]; then
+		source_dir=$1
+	else
+		echo "Invalid source directory"
+		show_usage
+	fi
+fi
+path_file=$2
+find $source_dir \! -type d \! -name '.*' > ${path_file}.path

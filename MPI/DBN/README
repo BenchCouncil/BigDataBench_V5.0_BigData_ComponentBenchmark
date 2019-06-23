@@ -1,0 +1,34 @@
+This project contains the MPI workloads in Deep_Learning.
+Arch of DBN:
+    one input layer(get the input samples) + one RBM + one RBM + ... + one RBM + one output layer(for BP finetune process) = DBN Arch
+
+Train process:
+   pre-training RBMs:
+        When the input layer get sample datas, stacked RBMs will be trained one by one.
+   finetune training(BP process):
+        After pre-training, the output layer will be trained and finetunes the whole network. That is to say, the BP process relys on stackedRBMs' pre-training.
+Notice:
+    You can run rbm.out, stackedRBMs.out and dbn.out independently. But if you want to run bp.out independently, you must run stackedRBMs.out at first and their number of thread must be the same. 
+
+How to makefile and run workloads:
+  
+  DBN
+   Makefile:
+         mpic++ DBN.cpp deep.o -o DBN
+   To run:
+         mpirun -n <process>./DBN
+  RBM
+   Makefile:
+         mpic++ RBM.cpp deep.o -o RBM
+   To run:
+         mpirun -n <process>./RBM
+  StackedRBMS
+   Makefile:
+         mpic++ StackedRBMS.cpp deep.o -o StackedRBMS
+   To run:
+         mpirun -n <process>./StackedRBMS
+  BP
+   Makefile:
+         mpic++ BP.cpp deep.o -o BP
+   To run:
+         mpirun -n <process>./BP

@@ -1,0 +1,17 @@
+author: luochunjie
+contact: luochunjie@ict.ac.cn
+
+说明：朴素贝叶斯的训练和预测的MPI程序
+多机运行时，每台机器的进程数必须一样
+数据必须在运行前以分布在多机上，且目录和文件名相同
+Multi-machine operation, the process must be the same number of each machine
+Data must be distributed before running on multiple machines, and the same directory and file name
+
+
+make编译
+mpicxx -std=c++11 -o MPI_NB_train MPI_NB_train.cpp
+mpicxx -std=c++11 -o MPI_NB_predict MPI_NB_predict.cpp
+
+run运行
+mpiexec -n N -machinefile filename  ./MPI_NB_train   -i input -o model
+mpiexec -n N -machinefile filename  ./MPI_NB_predict  -m model -i input -o output
