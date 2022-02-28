@@ -13,6 +13,6 @@ cd genData-CF
 make
 ./ALS-DataGen $a
 $HADOOP_HOME/bin/hadoop fs -mkdir -p /hadoop/cf/
-$HADOOP_HOME/bin/hadoop fs als_input.txt /hadoop/cf/cf-${1}G
+$HADOOP_HOME/bin/hadoop fs -put als_input.txt /hadoop/cf/cf-${1}G
 $HADOOP_HOME/bin/hadoop dfs -rmr /hadoop/cf/cf-out /hadoop/cf/temp
 
